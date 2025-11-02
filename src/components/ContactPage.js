@@ -43,7 +43,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+91 9066948676</p>
                   </div>
                 </div>
                 
@@ -53,7 +53,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-gray-600">info@designspace.com</p>
+                    <p className="text-gray-600">info@design.com</p>
                   </div>
                 </div>
                 

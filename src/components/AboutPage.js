@@ -40,7 +40,7 @@ const AboutPage = () => {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-gray-600 mb-4">
-                Founded in 2008, DesignSpace has been transforming residential and commercial spaces with innovative design solutions. Our team of experienced designers brings creativity, expertise, and attention to detail to every project.
+                Founded in 2008, JK Home Interior has been transforming residential and commercial spaces with innovative design solutions. Our team of experienced designers brings creativity, expertise, and attention to detail to every project.
               </p>
               <p className="text-gray-600 mb-4">
                 We believe that great design should be accessible to everyone. Our mission is to create beautiful, functional spaces that reflect our clients' personalities and enhance their daily lives.

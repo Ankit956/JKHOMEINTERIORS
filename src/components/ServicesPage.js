@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Package, Images, CheckCircle } from 'lucide-react';
+import { Home, Package, Image, CheckCircle } from 'lucide-react';
 
 const ServicesPage = () => {
   const services = [
