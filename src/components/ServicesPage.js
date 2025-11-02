@@ -14,7 +14,7 @@ const ServicesPage = () => {
       description: 'Optimize your space with strategic furniture placement and flow' 
     },
     { 
-      icon: Images, 
+      icon: Image, 
       title: '3D Visualization', 
       description: 'See your dream space before construction begins with realistic renders' 
     },
