@@ -55,4 +55,18 @@ export const portfolioItems = [
     title: 'Home Office', 
     description: 'Productive workspace design' 
   },
+  { 
+    id: 9, 
+    category: 'office', 
+    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800', 
+    title: 'Home Office', 
+    description: 'Productive workspace design'
+    },
+  { 
+    id: 10, 
+    category: 'Gym', 
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800', 
+    title: 'Spa Bathroom', 
+    description: 'Effective Gym Design' 
+  },
 ];

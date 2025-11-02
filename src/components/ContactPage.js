@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ 
@@ -9,10 +9,41 @@ const ContactPage = () => {
     message: '' 
   });
 
+  // Replace this with your actual WhatsApp number (include country code without + or -)
+  // Example: For +1 555 123 4567, use: 15551234567
+  const WHATSAPP_NUMBER = '+919066948676'; // CHANGE THIS TO YOUR WHATSAPP NUMBER
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Thank you for your message! We will contact you soon.');
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    // Create WhatsApp message
+    const whatsappMessage = `*New Contact Form Submission*%0A%0A` +
+      `*Name:* ${formData.name}%0A` +
+      `*Email:* ${formData.email}%0A` +
+      `*Phone:* ${formData.phone}%0A` +
+      `*Message:*%0A${formData.message}`;
+
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+
+    // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
+  };
+
+  // Direct WhatsApp contact button
+  const openWhatsApp = () => {
+    const message = `Hi, I'm interested in your interior design services!`;
+    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
   };
 
   return (
@@ -53,7 +84,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-gray-600">info@design.com</p>
+                    <p className="text-gray-600">info@designspace.com</p>
                   </div>
                 </div>
                 
@@ -77,64 +108,87 @@ const ContactPage = () => {
                     <p className="text-gray-600">Sat: 10:00 AM - 4:00 PM</p>
                   </div>
                 </div>
+
+                {/* WhatsApp Direct Contact Button */}
+                <div className="mt-8">
+                  <button
+                    onClick={openWhatsApp}
+                    className="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-lg font-semibold transition flex items-center justify-center gap-3 shadow-lg"
+                  >
+                    <MessageCircle size={24} />
+                    Chat with us on WhatsApp
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-lg shadow-xl">
-              <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
+              <h3 className="text-2xl font-bold mb-6">Send us a Message via WhatsApp</h3>
+              <p className="text-gray-600 mb-6 text-sm">
+                Fill out the form below and click submit to send your message directly to our WhatsApp.
+              </p>
               
               <div className="space-y-6">
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Name</label>
+                  <label className="block text-gray-700 font-semibold mb-2">Name *</label>
                   <input
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Email</label>
+                  <label className="block text-gray-700 font-semibold mb-2">Email *</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
                     placeholder="your@email.com"
+                    required
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Phone</label>
+                  <label className="block text-gray-700 font-semibold mb-2">Phone *</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
                     placeholder="+1 (555) 000-0000"
+                    required
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Message</label>
+                  <label className="block text-gray-700 font-semibold mb-2">Message *</label>
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     rows="5"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
                     placeholder="Tell us about your project..."
+                    required
                   ></textarea>
                 </div>
                 
                 <button 
                   onClick={handleSubmit}
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition flex items-center justify-center gap-2"
                 >
-                  Send Message
+                  <MessageCircle size={20} />
+                  Send via WhatsApp
                 </button>
+
+                <p className="text-xs text-gray-500 text-center">
+                  By clicking submit, WhatsApp will open with your pre-filled message
+                </p>
               </div>
             </div>
           </div>

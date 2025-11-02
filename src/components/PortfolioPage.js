@@ -23,7 +23,7 @@ const PortfolioPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {['all', 'living', 'bedroom', 'kitchen', 'bathroom', 'office'].map(filter => (
+            {['all', 'living', 'bedroom', 'kitchen', 'bathroom', 'office', 'gym'].map(filter => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
