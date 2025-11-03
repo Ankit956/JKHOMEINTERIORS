@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star } from 'lucide-react';
+/*import { getAllTestimonials, addTestimonial } from '../data/testimonialData';*/
 
 const AboutPage = () => {
   const testimonials = [

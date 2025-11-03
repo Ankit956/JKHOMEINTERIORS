@@ -6,7 +6,19 @@ const Navigation = ({ currentPage, setCurrentPage, mobileMenuOpen, setMobileMenu
     <nav className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          
+          
+          {/* Logo and Company Name */}
+          <div className="flex items-center gap-3">
+            {/* Logo and Company Name */}
+            <img 
+              src="/images/logo.png"  
+              alt="Company Logo" 
+              className="h-10 w-10 object-contain"
+            />
+
+
+
             <h1 className="text-2xl font-bold text-gray-800">JK HOME INTERIOR</h1>
           </div>
           
