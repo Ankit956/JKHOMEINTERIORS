@@ -12,7 +12,7 @@ const Navigation = ({ currentPage, setCurrentPage, mobileMenuOpen, setMobileMenu
           <div className="flex items-center gap-3">
             {/* Logo and Company Name */}
             <img 
-              src="/images/logo.png"  
+              src="public/images/logo.png"  
               alt="Company Logo" 
               className="h-10 w-10 object-contain"
             />
